@@ -37,7 +37,7 @@ The output for the code is here:
 It can be seen that NLTK did not catch all crucial phrases from this sentence. 
 ## The Power of Brute Force
 
-So, I took a different path – a brute force strategy. It may sound intense, but it's surprisingly effective. We slide a window over sentences, extracting all possible phrases. To make our comparisons more efficient, I first calculate vectors for  standardized phrases. After some experimentation, I settled on a similarity score threshold of 0.8 for `bert-base-nli-mean-tokens` and 0.5 for `multi-qa-mpnet-base-cos-v1`, which worked like a charm.
+So, I took a different path – a brute force strategy. It may sound intense, but it's surprisingly effective. We slide a window over sentences, extracting all possible phrases. To make our comparisons more efficient, I first calculate vectors for  standardized phrases. After some experimentation, I settled on a similarity score threshold of 0.8 for `bert-base-nli-mean-tokens` and 0.4 for `multi-qa-mpnet-base-cos-v1`, which worked like a charm.
 
 ## See the Results
 I have implemented a simple UI to put input text and phrases, and after pressing the `Get Suggestions` button, a new window with the answers will pop up.
@@ -99,7 +99,7 @@ Original: 'carefully and consider', Recommended: 'Ensure compliance', Similarity
 Sentence 11: On a side note, David mentioned that his cat is recovering well from surgery.
 
 ```
-For comparison, here is the `multi-qa-mpnet-base-cos-v1` model with 0.5 threshold:
+For comparison, here is the `multi-qa-mpnet-base-cos-v1` model with 0.4 threshold:
 ```
 Sentence 1: In today's meeting, we discussed a variety of issues affecting our department.
 
@@ -107,26 +107,37 @@ Sentence 2: The weather was unusually sunny, a pleasant backdrop to our serious 
 
 Sentence 3: We came to the consensus that we need to do better in terms of performance.
 Original: 'do better in terms of performance', Recommended: 'Optimal performance', Similarity Score: 0.748181939125061
+Original: 'to do better in terms of performance .', Recommended: 'Enhance productivity', Similarity Score: 0.4910092353820801
+Original: 'need to do better in terms of', Recommended: 'Exercise due diligence', Similarity Score: 0.41664934158325195
+Original: 'we need to do better in terms of', Recommended: 'Maintain a high standard', Similarity Score: 0.42751532793045044
 
 Sentence 4: Sally brought doughnuts, which lightened the mood.
 
 Sentence 5: It's important to make good use of what we have at our disposal.
 Original: 'make good use of what we', Recommended: 'Utilize resources', Similarity Score: 0.5697365999221802
+Original: 'make good use of what we have at our disposal .', Recommended: 'Demonstrate leadership', Similarity Score: 0.4404152035713196
 
 Sentence 6: During the coffee break, we talked about the upcoming company picnic.
 
 Sentence 7: We should aim to be more efficient and look for ways to be more creative in our daily tasks.
 Original: 'more efficient', Recommended: 'Optimal performance', Similarity Score: 0.6936391592025757
 Original: 'tasks', Recommended: 'Prioritize tasks', Similarity Score: 0.6638244390487671
+Original: 'ways to', Recommended: 'Implement best practices', Similarity Score: 0.41149288415908813
 Original: 'aim to be more efficient and', Recommended: 'Enhance productivity', Similarity Score: 0.6954512000083923
 Original: 'look for ways to be more creative in our', Recommended: 'Foster innovation', Similarity Score: 0.5391108989715576
+Original: 'more efficient and look', Recommended: 'Streamline operations', Similarity Score: 0.49202752113342285
+Original: 'We should aim to be more', Recommended: 'Maintain a high standard', Similarity Score: 0.41535401344299316
 
 Sentence 8: Growth is essential for our future, but equally important is building strong relationships with our team members.
 Original: 'Growth', Recommended: 'Drive growth', Similarity Score: 0.7619696855545044
+Original: 'building strong relationships with our team members .', Recommended: 'Facilitate collaboration', Similarity Score: 0.48536840081214905
+Original: 'strong relationships with our team members .', Recommended: 'Demonstrate leadership', Similarity Score: 0.42557328939437866
 
 Sentence 9: As a reminder, the annual staff survey is due next Friday.
 
 Sentence 10: Lastly, we agreed that we must take time to look over our plans carefully and consider all angles before moving forward.
+Original: 'plans carefully and', Recommended: 'Implement best practices', Similarity Score: 0.4843961000442505
+Original: 'carefully and consider all', Recommended: 'Exercise due diligence', Similarity Score: 0.4531348943710327
 
 Sentence 11: On a side note, David mentioned that his cat is recovering well from surgery.
 ```
