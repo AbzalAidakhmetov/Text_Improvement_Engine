@@ -11,7 +11,7 @@ Let's kick things off by demystifying cosine similarity. At its core, it's a nif
 Instead of building a custom solution from scratch, I've opted for a time-saving approach. I am using the [SentenceTransformer library](https://www.sbert.net/docs/pretrained_models.html), a fantastic tool that effortlessly transforms phrases into vectors. There are lots of available pre-trained models differing in accuracy and speed, I have used most of them, and interestingly the best ones like `all-mpnet-base-v2`, `multi-qa-mpnet-base-cos-v1` showed lower cosine similarity scores compared to `bert-base-nli-mean-tokens` which considered to be giving lower quality embeddings. Nevertheless, everything depends on the threshold that you will give. SOTA sentence transformers gave almost the same results as BERT, but I had to lower the threshold for the former. Thus, I decided to show both `bert-base-nli-mean-tokens` and `multi-qa-mpnet-base-cos-v1` results.
 ## The Challenge of Phrase Extraction
 
-After conquering the conversion hurdle, the next mission is to find meaningful phrases within sentences and compare them with standardized ones. We tried using libraries like NLTK, but they didn't quite cut it. Here is the implementation of the NLTK:
+After conquering the conversion hurdle, the next mission is to find meaningful phrases within sentences and compare them with standardized ones. I tried using libraries like NLTK, but they didn't quite cut it. Here is the implementation of the NLTK:
 
 ```python
 import nltk
