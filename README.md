@@ -1,4 +1,4 @@
-# Text Enhancement with Cosine Similarity
+# Text Improvement Engine
 
 Welcome to my text enhancement journey, where we harness the power of cosine similarity to make text better!
 
