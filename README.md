@@ -37,7 +37,7 @@ The output for the code is here:
 It can be seen that NLTK did not catch all crucial phrases from this sentence. 
 ## The Power of Brute Force
 
-So, I took a different path – a brute force strategy. It may sound intense, but it's surprisingly effective. We slide a window over sentences, extracting all possible phrases. To make our comparisons more efficient, I first calculate vectors for  standardized phrases. After some experimentation, we settled on a similarity score threshold of 0.8 for `bert-base-nli-mean-tokens` and 0.5 for `multi-qa-mpnet-base-cos-v1`, which worked like a charm.
+So, I took a different path – a brute force strategy. It may sound intense, but it's surprisingly effective. We slide a window over sentences, extracting all possible phrases. To make our comparisons more efficient, I first calculate vectors for  standardized phrases. After some experimentation, I settled on a similarity score threshold of 0.8 for `bert-base-nli-mean-tokens` and 0.5 for `multi-qa-mpnet-base-cos-v1`, which worked like a charm.
 
 ## See the Results
 I have implemented a simple UI to put input text and phrases, and after pressing the `Get Suggestions` button, a new window with the answers will pop up.
