@@ -133,3 +133,5 @@ Sentence 11: On a side note, David mentioned that his cat is recovering well fro
 As can be seen, `bert-base-nli-mean-tokens` gave more results, but the quality was a little bit poor in comparison to `multi-qa-mpnet-base-cos-v1` which gave less number of suggestions with higher quality of phrases.
 
 In conclusion, I have successfully implemented sentence transformers to find similar phrases in the text with standardized ones. There is a huge amount of implementations for this project like recommendation engine, text summarization, and many others.
+
+Thank you for your attention!
